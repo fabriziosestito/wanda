@@ -35,6 +35,7 @@ defmodule Wanda.MixProject do
     [
       {:rhai_rustler, "~> 0.1.1"},
       {:gen_rmq, "~> 4.0"},
+      {:ex_doc, "~> 0.29", only: :dev, runtime: false},
       # this is pinned since the 3.1.0 version requires OTP 23.2
       # overrides gen_rmq dependency
       {:credentials_obfuscation, "3.0.0", override: true},

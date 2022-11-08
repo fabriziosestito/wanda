@@ -35,7 +35,6 @@ defmodule Wanda.MixProject do
     [
       {:rhai_rustler, "~> 0.1.1"},
       {:gen_rmq, "~> 4.0"},
-      {:ex_doc, "~> 0.29", only: :dev, runtime: false},
       # this is pinned since the 3.1.0 version requires OTP 23.2
       # overrides gen_rmq dependency
       {:credentials_obfuscation, "3.0.0", override: true},
@@ -43,6 +42,7 @@ defmodule Wanda.MixProject do
       {:yaml_elixir, "~> 2.9"},
       {:trento_contracts, github: "trento-project/contracts", ref: "01db6a7", sparse: "elixir"},
       # test deps
+      {:ex_doc, "~> 0.29", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:mox, "~> 1.0", only: :test},

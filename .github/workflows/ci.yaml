@@ -207,6 +207,8 @@ jobs:
             _build/test
             priv/plts
           key: ${{ runner.os }}-${{ env.OTP_VERSION }}-${{ env.ELIXIR_VERSION }}-${{ hashFiles('mix.lock') }}
+      - name: Build docs
+        uses: lee-dohm/generate-elixir-docs@v1
       - name: Generate openapi.json
         run: mix openapi.spec.json --spec WandaWeb.ApiSpec
       - name: Generate Swagger UI
@@ -214,8 +216,6 @@ jobs:
         with:
           output: ./doc/swagger-ui
           spec-file: openapi.json
-      - name: Build docs
-        uses: lee-dohm/generate-elixir-docs@v1
       - name: Publish docs to Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

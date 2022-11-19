@@ -208,7 +208,7 @@ jobs:
             priv/plts
           key: ${{ runner.os }}-${{ env.OTP_VERSION }}-${{ env.ELIXIR_VERSION }}-${{ hashFiles('mix.lock') }}
       - name: Generate openapi.json
-        run: mix openapi.json --spec WandaWeb.ApiSpec
+        run: mix openapi.spec.json --spec WandaWeb.ApiSpec
       - name: Generate Swagger UI
         uses: Legion2/swagger-ui-action@v1
         with:
